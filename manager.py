@@ -1,5 +1,6 @@
 import os
-from app import create_app
+from app import create_app, db
+from app.models import AdminUser
 from flask.ext.script import Manager, Shell
 
 
@@ -8,6 +9,6 @@ manager = Manager(app)
 
 
 def make_shell_context():
-    return dict(app=app)
+    return dict(app=app, db=db, AdminUser=AdminUser)
 if __name__ == '__main__':
     manager.run()

@@ -3,7 +3,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to  guess string'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'KeepThisS3cr3t'
+    MONGODB_SETTING = {
+        'db': 'rundb',
+    }
 
     @staticmethod
     def init_app(app):
