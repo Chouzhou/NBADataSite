@@ -7,7 +7,8 @@ from . import admin
 def Admin_Login():
     if request.method == 'POST':
         print(request.form['adminname'])
-        print(AdminUser.objects.get(adminname=request.form['adminname']))
+        print(AdminUser.objects.get_or_404(
+            adminname=request.form['adminname']))
         # user = AdminUser.objects.get(adminname=request.form['adminname'])
         # if user.password == request.form['password']:
         return render_template('admin/success.html')
